@@ -1,0 +1,30 @@
+{
+  "upload": {
+    "port": "/dev/ttyS4",
+    "baud": 115200
+  },
+  "serial": {
+    "port": "/dev/ttyS3",
+    "baud": 115200
+  },
+  "ignore": {
+    "extensions": [
+      ".micropythonrc",
+      ".txt",
+      ".json"
+    ],
+    "directories": [
+      ".vscode",
+      ".microypy"
+    ],
+    "files": [
+      "requirements.txt",
+      "dev-requirements",
+      "micropy.json"
+    ]
+  },
+  "tools": {
+    "ampy": "/home/daniel/.local/bin/ampy",
+    "rshell": "/home/daniel/.local/bin/rshell"
+  }
+}
