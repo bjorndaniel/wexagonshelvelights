@@ -7,7 +7,7 @@ import ssd1306
 # i2c = I2C(-1, scl=Pin(22), sda=Pin(21))
 
 # ESP8266 Pin assignment
-i2c = I2C(-1, scl=Pin(5), sda=Pin(4))#5==D1 4==D2
+i2c = I2C(-1, scl=Pin(5), sda=Pin(4))  # 5==D1 4==D2
 
 oled_width = 128
 oled_height = 64
@@ -19,16 +19,17 @@ oled.write_cmd(0xc8)
 def printap():
     clear()
     oled.text("AP mode:", 0, 0)
-    oled.text("192.168.1.4", 0, 20)
-    oled.text("cockroach", 40)
+    oled.text("192.168.4.1", 0, 22)
+    oled.text("WexagonLights", 0, 37)
+    oled.text("M1n1Dud3", 0, 52)
     oled.show()
 
 
 def print(line1, line2, line3):
     clear()
     oled.text(line1, 0, 0)
-    oled.text(line2, 0, 20)
-    oled.text(line3, 0, 40)
+    oled.text(line2, 0, 22)
+    oled.text(line3, 0, 37)
     oled.show()
 
 

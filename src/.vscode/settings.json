@@ -1,6 +1,0 @@
-{
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.analysis.logLevel": "Warning",
-    "python.linting.pycodestyleCategorySeverity.W": "Error"
-}

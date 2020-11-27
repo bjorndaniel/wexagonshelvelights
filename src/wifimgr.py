@@ -89,6 +89,7 @@ def do_connect(ssid, password):
     if wlan_sta.isconnected():
         return None
     print('Trying to connect to %s...' % ssid)
+    display.print("Trying to", "connect to", ssid)
     wlan_sta.connect(ssid, password)
     for retry in range(100):
         connected = wlan_sta.isconnected()
@@ -183,6 +184,7 @@ def handle_root(client):
 
 
 def handle_configure(client, request):
+    print('handle_configure')
     match = ure.search("ssid=([^&]*)&password=(.*)", request)
 
     if match is None:
@@ -194,10 +196,12 @@ def handle_configure(client, request):
             "utf-8").replace("%3F", "?").replace("%21", "!")
         password = match.group(2).decode(
             "utf-8").replace("%3F", "?").replace("%21", "!")
-    except Exception:
+    except Exception as e:
+        print(e)
         ssid = match.group(1).replace("%3F", "?").replace("%21", "!")
         password = match.group(2).replace("%3F", "?").replace("%21", "!")
-
+    print(ssid)
+    print(password)
     if len(ssid) == 0:
         send_response(client, "SSID must be provided", status_code=400)
         return False
@@ -304,7 +308,8 @@ def start(port=80):
             try:
                 url = ure.search("(?:GET|POST) /(.*?)(?:\\?.*?)? HTTP",
                                  request).group(1).decode("utf-8").rstrip("/")
-            except Exception:
+            except Exception as e:
+                print(e)
                 url = ure.search(
                     "(?:GET|POST) /(.*?)(?:\\?.*?)? HTTP", request).group(1).rstrip("/")
             print("URL is {}".format(url))

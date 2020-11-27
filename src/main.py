@@ -2,12 +2,14 @@ import wifimgr
 import lights
 import webserver
 import display
+import time
 
 try:
     import usocket as socket
 except:
     import socket
-
+display.print("", "  Lights demo", "")
+lights.demo()
 display.print("  Wifi connect", "", "")
 wlan = wifimgr.get_connection()
 if wlan is None:
@@ -15,8 +17,7 @@ if wlan is None:
     while True:
         pass  # you shall not pass :D
 print(wlan.ifconfig())
-display.print("", "  Lights demo", "")
-lights.demo()
+
 print('starting web server')
 display.print("         Start", "     Web server", "")
 

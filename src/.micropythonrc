@@ -1,10 +1,10 @@
 {
   "upload": {
-    "port": "/dev/ttyS4",
+    "port": "COM13",
     "baud": 115200
   },
   "serial": {
-    "port": "/dev/ttyS3",
+    "port": "COM13",
     "baud": 115200
   },
   "ignore": {
@@ -24,7 +24,7 @@
     ]
   },
   "tools": {
-    "ampy": "/home/daniel/.local/bin/ampy",
-    "rshell": "/home/daniel/.local/bin/rshell"
+    "ampy": "ampy",
+    "rshell": "rshell"
   }
 }

@@ -1,5 +1,7 @@
 # Wexagon shelve lights
-A micropython server for [Weksters](https://www.patreon.com/wekster/posts) wexagon shelves and his minidudes.
+A micropython server for [Weksters](https://www.patreon.com/wekster/posts) wexagon shelves and his minidudes. 
+
+**NOTE: Requires [this](https://github.com/belyalov/tinyweb/releases) firmware that includes tinyweb!**
 
 Parts used:
 * Wemos D1 mini
